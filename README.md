@@ -34,20 +34,20 @@ Node.js and Express.js
 GraphQL for API queries and mutations
 
 => Install backend dependencies and start the server:
-npm install express
-npm install express-graphql graphql
-npm install sequelize mysql2
-npm install cors
+npm install express,
+npm install express-graphql graphql,
+npm install sequelize mysql2,
+npm install cors.
 
 cd backend
 npm install
 node index.js
 
 => Install frontend dependencies and start the frontend:
-npm install react react-dom react-scripts
-npm install @reduxjs/toolkit react-redux
-npm install @apollo/client graphql
-npm install axios
+npm install react react-dom react-scripts,
+npm install @reduxjs/toolkit react-redux,
+npm install @apollo/client graphql,
+npm install axios.
 
 cd frontend
 npm install
