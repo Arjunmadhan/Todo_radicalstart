@@ -58,6 +58,19 @@ A full-stack Todo Application that allows users to add, complete, and manage the
    ```
    - The frontend will run at [http://localhost:5174](http://localhost:5174).
 
+## ❓ Troubleshooting: Dependency Installation Errors
+
+If you encounter errors after running `npm install` in either the `frontend` or `backend` folders, try installing the following dependencies manually:
+   - 
+### 👉 For the **Frontend** (React + Vite):
+
+```bash
+npm install react react-dom
+npm install @reduxjs/toolkit react-redux
+npm install @apollo/client graphql
+```
+
+
 ---
 
 ### 2. **Backend Setup**
@@ -72,6 +85,25 @@ A full-stack Todo Application that allows users to add, complete, and manage the
    npm install
    ```
    - Ensure all dependencies (`express`, `express-graphql`, `graphql`, `sequelize`, `mysql2`, `cors`) are installed.
+   - ---
+## ❓ Troubleshooting: Dependency Installation Errors
+
+If you encounter errors after running `npm install` in either the `frontend` or `backend` folders, try installing the following dependencies manually:
+
+### 👉 For the **Backend** (Node.js + Express + GraphQL + MySQL):
+
+```bash
+npm install express
+npm install graphql express-graphql
+npm install mysql2
+npm install sequelize
+```
+
+If you still face issues, double-check you are running the commands inside the correct directory (`frontend` or `backend`) and that your Node.js version matches the required version.
+
+
+
+---
 
 4. **Check MySQL credentials**  
    - Open the `database.js` or `data.js` file in `backend`.
