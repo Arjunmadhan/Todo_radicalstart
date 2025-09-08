@@ -48,7 +48,7 @@ Sequelize ORM for MySQL database interaction
 
 MySQL database for storing tasks
 
-MySql=> Use your table for storing data.
+MySql=> Use your password for connecting with Mysql storing data.
 create schema todoapp;
 use todoapp;
 CREATE TABLE IF NOT EXISTS tasks (
