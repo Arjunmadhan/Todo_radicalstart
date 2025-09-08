@@ -30,7 +30,7 @@ A full-stack Todo Application that allows users to add, complete, and manage the
 - Responsive UI
 
 **Backend:**
-- Node.js & Express.js
+- Node.js version is v23.1.0 & Express.js 
 - GraphQL (express-graphql)
 - Sequelize ORM (MySQL)
 - MySQL Database
