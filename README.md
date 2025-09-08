@@ -1,70 +1,148 @@
-Project Concept:
-Users can type a task name and click the Add button to move it to the Listed Tasks section. When a task’s checkbox is clicked, it automatically moves to the Completed Tasks section. This provides an interactive way to track pending and finished tasks in real time.
+# Todo App — Full Stack (React, Redux Toolkit, GraphQL, Node.js, Express, Sequelize, MySQL)
 
-A full-stack Todo Application built using React, Redux Toolkit, GraphQL, Node.js, Express, Sequelize, and MySQL. This application allows users to manage tasks efficiently with a clean and responsive interface, providing real-time interaction between the frontend and backend.
+A full-stack Todo Application that allows users to add, complete, and manage their tasks efficiently with a clean, real-time interface. This project demonstrates seamless real-time interaction between frontend and backend, persistent storage with MySQL, and robust server connection handling.
 
-Features
+---
 
-Add Tasks: Users can add tasks to their todo list. Tasks are stored in a MySQL database via the backend server.
+## 🖥️ Local Development Ports
 
-Mark Complete: Tasks can be marked as completed, and completed tasks are displayed separately.
+- **Frontend:** runs on `http://localhost:5174`
+- **Backend (GraphQL API):** runs on `http://localhost:4000/graphql`
 
-Server Connection Handling: The frontend detects server availability. If the backend is not connected, the application shows an alert and only displays local tasks without affecting the UI.
+---
 
-Real-time Updates: Using GraphQL, tasks are updated in real-time between the frontend and backend.
+## 🚀 Project Overview
 
-Persistent Storage: All tasks are stored in MySQL ensuring that data persists even after the app is closed or refreshed.
+- **Add Tasks:** Users can type a task name and click “Add”; tasks appear in the Listed Tasks section.
+- **Mark Complete:** Clicking a task’s checkbox automatically moves it to the Completed Tasks section.
+- **Real-time Updates:** Tasks are updated in real-time between frontend and backend using GraphQL.
+- **Persistent Storage:** All tasks are stored in MySQL for data persistence.
+- **Server Connection Handling:** If the backend is disconnected, the frontend shows an alert and only displays local tasks (UI never freezes).
 
-Technologies Used
+---
 
-Frontend:
+## 🛠️ Technologies Used
 
-React (functional components and hooks)
+**Frontend:**
+- React (with hooks)
+- Redux Toolkit
+- Apollo Client (GraphQL)
+- Responsive UI
 
-Redux Toolkit for state management
+**Backend:**
+- Node.js & Express.js
+- GraphQL (express-graphql)
+- Sequelize ORM (MySQL)
+- MySQL Database
 
-Apollo Client for GraphQL queries and mutations
+---
 
-Responsive and user-friendly UI
+## 🟢 Getting Started — Step-by-Step Instructions
 
-Backend:
+### 1. **Frontend Setup**
 
-Node.js and Express.js
+1. **Open the `frontend` folder**  
+   Navigate to the `frontend` directory.
 
-GraphQL for API queries and mutations
+2. **Open your terminal in the `frontend` folder**  
+   (In VS Code: right-click the folder → “Open in Integrated Terminal”)
 
-=> Install backend dependencies and start the server:
-npm install express,
-npm install express-graphql graphql,
-npm install sequelize mysql2,
-npm install cors.
+3. **Install frontend dependencies**  
+   ```bash
+   npm install
+   ```
 
-cd backend
-npm install
-node index.js
+4. **Start the frontend server**  
+   ```bash
+   npm run dev
+   ```
+   - The frontend will run at [http://localhost:5174](http://localhost:5174).
 
-=> Install frontend dependencies and start the frontend:
-npm install react react-dom react-scripts,
-npm install @reduxjs/toolkit react-redux,
-npm install @apollo/client graphql,
-npm install axios.
+---
 
-cd frontend
-npm install
-npm run dev
-Sequelize ORM for MySQL database interaction
+### 2. **Backend Setup**
 
-MySQL database for storing tasks
+1. **Open the `backend` folder**  
+   Navigate to the `backend` directory.
 
-MySql=> Use your password for connecting with Mysql storing data.
-create schema todoapp;
-use todoapp;
-CREATE TABLE IF NOT EXISTS tasks (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  title VARCHAR(255) NOT NULL,
-  completed BOOLEAN DEFAULT FALSE,
-  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
-SELECT DATABASE();
-select *from tasks;
+2. **Open your terminal in the `backend` folder**
+
+3. **Install backend dependencies**  
+   ```bash
+   npm install
+   ```
+   - Ensure all dependencies (`express`, `express-graphql`, `graphql`, `sequelize`, `mysql2`, `cors`) are installed.
+
+4. **Check MySQL credentials**  
+   - Open the `database.js` or `data.js` file in `backend`.
+   - Make sure your MySQL username and password are correct:
+     ```js
+     // Example (backend/database.js or data.js)
+     const sequelize = new Sequelize('todoapp', 'YOUR_MYSQL_USERNAME', 'YOUR_MYSQL_PASSWORD', {
+         host: 'localhost',
+         dialect: 'mysql'
+     });
+     ```
+
+---
+
+### 3. **MySQL Database Setup**
+
+1. **Open MySQL Workbench or your preferred MySQL client.**
+
+2. **Paste and run the following SQL queries:**
+   ```sql
+   CREATE SCHEMA IF NOT EXISTS todoapp;
+   USE todoapp;
+
+   CREATE TABLE IF NOT EXISTS tasks (
+     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     title VARCHAR(255) NOT NULL,
+     completed BOOLEAN DEFAULT FALSE,
+     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+     updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+   );
+   ```
+
+3. **To verify:**
+   ```sql
+   SELECT DATABASE();
+   SELECT * FROM tasks;
+   ```
+
+---
+
+### 4. **Check Backend–MySQL Connection**
+
+1. **Start the backend server:**  
+   In the `backend` terminal, run:
+   ```bash
+   node index.js
+   ```
+2. **You should see:**  
+   ```
+   Database connection successfully
+   ```
+   - If you see any error, check your MySQL credentials and ensure MySQL is running.
+
+---
+
+### 5. **Run the Frontend**
+
+1. **Go back to your `frontend` terminal** (if closed, open it again in `frontend`).
+
+2. **Start the frontend server:**  
+   ```bash
+   npm run dev
+   ```
+   - The frontend will run on [http://localhost:5174](http://localhost:5174).
+
+---
+
+
+
+**You’re all set!**  
+- Add tasks, mark them as complete, and enjoy real-time synchronization between frontend and backend.
+- If you encounter any issues, double-check your MySQL credentials and database setup.
+
+---
